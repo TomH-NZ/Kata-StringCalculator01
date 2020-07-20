@@ -1,12 +1,15 @@
-﻿using System;
+using System;
 
 namespace StringCalculatorKata01
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Starting Project");
+            var result = Calculator.StringCalculator("Orange");
+            Console.WriteLine($"Ending Project with result: {result}");
+            Console.ReadLine();
         }
     }
 }
