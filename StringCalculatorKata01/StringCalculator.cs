@@ -5,18 +5,17 @@ namespace StringCalculatorKata01
     
     public class Calculator
     {
-        public static int StringCalculator(string valueToCalculate)
+        public static int StringCalculator(string inputValueToCalculate)
         {
-            string[] separatedValues = valueToCalculate.Split(',');
+            string[] separatedInputValues = inputValueToCalculate.Split(',');
 
-            foreach (var word in separatedValues)
+            foreach (var word in separatedInputValues)
             {
-                var convertedString = 0;
-                Int32.TryParse(word, out convertedString);
+                Int32.TryParse(word, out var convertedInputValue);
 
-                if (convertedString > 0)
+                if (convertedInputValue > 0)
                 {
-                    return convertedString;
+                    return convertedInputValue;
                 }
                 return 0; 
             }
