@@ -5,9 +5,16 @@ namespace StringCalculatorKata01
     
     public class Calculator
     {
-        public static string StringCalculator(string toCalculate)
+        public static int StringCalculator(string valueToCalculate)
         {
-            return toCalculate;
+            var convertedString = 0;
+            Int32.TryParse(valueToCalculate, out convertedString);
+
+            if (convertedString > 0)
+            {
+                return convertedString;
+            }
+            return 0;
         }
     }
 }

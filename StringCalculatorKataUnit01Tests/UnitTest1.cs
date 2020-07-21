@@ -10,10 +10,20 @@ namespace StringCalculatorKataUnit01Tests
         public void TestShouldReturnZero()
         {
             //Arrange
-            var result = Calculator.StringCalculator("2");
+            var result = Calculator.StringCalculator("");
             //Act
+            //Assert
+            Assert.Equal(0, result);
+        }
+
+        [Fact]
+        public void TestShouldReturn3()
+        {
             //Arrange
-            Assert.Equal("1", result);
+            var result = Calculator.StringCalculator("3");
+            //Act
+            //Assert
+            Assert.Equal(3, result);
         }
     }
 }
