@@ -7,13 +7,20 @@ namespace StringCalculatorKata01
     {
         public static int StringCalculator(string valueToCalculate)
         {
-            var convertedString = 0;
-            Int32.TryParse(valueToCalculate, out convertedString);
+            string[] separatedValues = valueToCalculate.Split(',');
 
-            if (convertedString > 0)
+            foreach (var word in separatedValues)
             {
-                return convertedString;
+                var convertedString = 0;
+                Int32.TryParse(word, out convertedString);
+
+                if (convertedString > 0)
+                {
+                    return convertedString;
+                }
+                return 0; 
             }
+
             return 0;
         }
     }
