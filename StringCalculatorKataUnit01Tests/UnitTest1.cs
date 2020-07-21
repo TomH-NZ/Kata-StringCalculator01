@@ -7,44 +7,13 @@ namespace StringCalculatorKataUnit01Tests
 {
     public class KataShould
     {
-        [Fact]
-        public void ReturnZero()
-        {
-            //Arrange
-            var result = Calculator.StringCalculator("");
-            //Act
-            //Assert
-            Assert.Equal(0, result);
-        }
-
-        [Fact]
-        public void Return3()
-        {
-            //Arrange
-            var result = Calculator.StringCalculator("3");
-            //Act
-            //Assert
-            Assert.Equal(3, result);
-        }
-        
-        [Fact]
-        public void Return2()
-        {
-            //Arrange
-            var result = Calculator.StringCalculator("2");
-            //Act
-            //Assert
-            Assert.Equal(2, result);
-        }
-
         [Theory]
         [InlineData("1", 1)]
         [InlineData("3", 3)]
         [InlineData("", 0)]
         public void ReturnSingleValues(string inputValue, int outputValue)
         {
-            var result = Calculator.StringCalculator(inputValue);
-            Assert.True(result == outputValue);
+            Assert.True(Calculator.StringCalculator(inputValue) == outputValue);
         }
         
         [Fact]
@@ -63,9 +32,7 @@ namespace StringCalculatorKataUnit01Tests
         [InlineData("1,1", 2)]
         public void AddTwoNumbers(string inputString, int outputString)
         {
-            var result = Calculator.StringCalculator(inputString);
-            Assert.True(result == outputString);
+            Assert.True(Calculator.StringCalculator(inputString) == outputString);
         }
     }
 }
-// use theory for hte tests

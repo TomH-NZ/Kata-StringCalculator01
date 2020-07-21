@@ -11,8 +11,7 @@
 &lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=773bb8e6_002Dbdde_002D47fd_002Da6e3_002D9a7ac008cc2c/@EntryIndexedValue">&lt;SessionState ContinuousTestingIsOn="False" ContinuousTestingMode="0" FrameworkVersion="{x:Null}" IsLocked="False" Name="UnitTest1 #5" PlatformMonoPreference="{x:Null}" PlatformType="{x:Null}" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"&gt;
   &lt;TestAncestor&gt;
-    &lt;TestId&gt;xUnit::8B3E9CCD-EA41-4440-A7CA-A8FFEE14F645::.NETCoreApp,Version=v3.1::StringCalculatorKataUnit01Tests.KataShould.AddTwoNumbers&lt;/TestId&gt;
-    &lt;TestId&gt;xUnit::8B3E9CCD-EA41-4440-A7CA-A8FFEE14F645::.NETCoreApp,Version=v3.1::StringCalculatorKataUnit01Tests.KataShould.ReturnSingleValues&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::8B3E9CCD-EA41-4440-A7CA-A8FFEE14F645::.NETCoreApp,Version=v3.1::StringCalculatorKataUnit01Tests.KataShould&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=8d4ee553_002D937d_002D4ddb_002D88ce_002D57940a44974d/@EntryIndexedValue">&lt;SessionState ContinuousTestingIsOn="False" ContinuousTestingMode="0" FrameworkVersion="{x:Null}" IsLocked="False" Name="UnitTest1 #6" PlatformMonoPreference="{x:Null}" PlatformType="{x:Null}" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"&gt;
