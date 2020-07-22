@@ -9,18 +9,16 @@ namespace StringCalculatorKata01
         {
             string[] separatedInputValues = inputValueToCalculate.Split(',');
 
+            var returnedValue = 0;
+            
             foreach (var word in separatedInputValues)
             {
                 Int32.TryParse(word, out var convertedInputValue);
 
-                if (convertedInputValue > 0)
-                {
-                    return convertedInputValue;
-                }
-                return 0; 
+                returnedValue = returnedValue + convertedInputValue;
             }
-
-            return 0;
+            
+            return returnedValue > 0 ? returnedValue : 0;
         }
     }
 }
