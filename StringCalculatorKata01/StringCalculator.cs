@@ -7,7 +7,8 @@ namespace StringCalculatorKata01
     {
         public static int StringCalculator(string inputValueToCalculate)
         {
-            var separatedInputValues = inputValueToCalculate.Split(',');
+            char[] charSeparators = new char[] {',', '\n'};
+            var separatedInputValues = inputValueToCalculate.Split(charSeparators, StringSplitOptions.None);
 
             var returnedValue = 0;
             

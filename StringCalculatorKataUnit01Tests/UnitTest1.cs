@@ -11,7 +11,7 @@ namespace StringCalculatorKataUnit01Tests
         [InlineData("1", 1)]
         [InlineData("3", 3)]
         [InlineData("", 0)]
-        public void ReturnSingleValuesAssert(string inputValue, int outputValue)
+        public void ReturnSingleValues(string inputValue, int outputValue)
         {
             Assert.True(Calculator.StringCalculator(inputValue) == outputValue);
         }
@@ -30,9 +30,9 @@ namespace StringCalculatorKataUnit01Tests
         [InlineData("1,3", 4)]
         [InlineData("7,3", 10)]
         [InlineData("1,1", 2)]
-        public void AddTwoNumbers(string inputString, int outputString)
+        public void AddTwoNumbers(string inputString, int outputValue)
         {
-            Assert.True(Calculator.StringCalculator(inputString) == outputString);
+            Assert.True(Calculator.StringCalculator(inputString) == outputValue);
         }
         
         [Theory]
@@ -40,9 +40,18 @@ namespace StringCalculatorKataUnit01Tests
         [InlineData("2,4,6", 12)]
         [InlineData("3,3,3", 9)]
         [InlineData("10,20,30", 60)]
-        public void AddMultipleNumbers(string inputString, int outputString)
+        public void AddMultipleNumbers(string inputString, int outputValue)
         {
-            Assert.True(Calculator.StringCalculator(inputString) == outputString);
+            Assert.True(Calculator.StringCalculator(inputString) == outputValue);
+        }
+
+        [Theory]
+        [InlineData("1,2\n3", 6)]
+        [InlineData("3\n5\n3,9", 20)]
+        [InlineData("1\n3,5\n7", 16)]
+        public void UseTwoDelimiters(string inputString, int outputValue)
+        {
+            Assert.True(Calculator.StringCalculator(inputString) == outputValue);
         }
     }
 }
