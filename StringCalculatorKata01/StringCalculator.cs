@@ -14,12 +14,14 @@ namespace StringCalculatorKata01
             
             foreach (var word in separatedInputValues)
             {
-                int.TryParse(word, out var convertedInputValue);
+                var convertedInputValue = 0;
+                
+                int.TryParse(word, out convertedInputValue);
 
                 returnedValue += convertedInputValue;
             }
             
-            return returnedValue > 0 ? returnedValue : 0;
+            return returnedValue;
         }
     }
 }

@@ -10,10 +10,15 @@ namespace StringCalculatorKataUnit01Tests
         [Theory]
         [InlineData("1", 1)]
         [InlineData("3", 3)]
+        [InlineData("5", 5)]
         [InlineData("", 0)]
         public void ReturnSingleValues(string inputValue, int outputValue)
         {
-            Assert.True(Calculator.StringCalculator(inputValue) == outputValue);
+            //Arrange
+            var result = Calculator.StringCalculator(inputValue);
+            //Act
+            //Assert
+            Assert.Equal(outputValue, result);
         }
         
         [Fact]
@@ -30,9 +35,14 @@ namespace StringCalculatorKataUnit01Tests
         [InlineData("1,3", 4)]
         [InlineData("7,3", 10)]
         [InlineData("1,1", 2)]
+        [InlineData("10,1",11)]
         public void AddTwoNumbers(string inputString, int outputValue)
         {
-            Assert.True(Calculator.StringCalculator(inputString) == outputValue);
+            //Arrange
+            var result = Calculator.StringCalculator(inputString);
+            //Act
+            //Assert
+            Assert.Equal(outputValue, result);
         }
         
         [Theory]
@@ -42,16 +52,26 @@ namespace StringCalculatorKataUnit01Tests
         [InlineData("10,20,30", 60)]
         public void AddMultipleNumbers(string inputString, int outputValue)
         {
-            Assert.True(Calculator.StringCalculator(inputString) == outputValue);
+            //Arrange
+            var result = Calculator.StringCalculator(inputString);
+            //Act
+            //Assert
+            Assert.Equal(outputValue, result);
         }
 
         [Theory]
         [InlineData("1,2\n3", 6)]
         [InlineData("3\n5\n3,9", 20)]
         [InlineData("1\n3,5\n7", 16)]
+        [InlineData("2,3,5\n7", 17)]
         public void UseTwoDelimiters(string inputString, int outputValue)
         {
-            Assert.True(Calculator.StringCalculator(inputString) == outputValue);
+            //Arrange
+            var result = Calculator.StringCalculator(inputString);
+            //Act
+            //Assert
+            Assert.Equal(outputValue, result);
         }
     }
 }
+// write doc on testing.
