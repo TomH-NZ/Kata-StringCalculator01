@@ -72,6 +72,20 @@ namespace StringCalculatorKataUnit01Tests
             //Assert
             Assert.Equal(outputValue, result);
         }
+
+        [Theory]
+        [InlineData("//;\n1;2", 3)]
+        [InlineData("//q\n1q2q3", 6)]
+        [InlineData("//--\n2--4--6", 12)]
+        [InlineData("//;\n1;2;3;4", 10)]
+        public void UseCustomDelimiter(string inputString, int outputValue)
+        {
+            //Arrange
+            var result = Calculator.StringCalculator(inputString);
+            //Act
+            //Assert
+            Assert.Equal(outputValue, result);
+        }
     }
 }
 // write doc on testing.

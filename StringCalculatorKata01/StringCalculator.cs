@@ -7,21 +7,31 @@ namespace StringCalculatorKata01
     {
         public static int StringCalculator(string inputValueToCalculate)
         {
-            char[] charSeparators = new char[] {',', '\n'};
+            char[] charSeparators = {',', '\n'};
             var separatedInputValues = inputValueToCalculate.Split(charSeparators, StringSplitOptions.None);
 
             var returnedValue = 0;
             
             foreach (var word in separatedInputValues)
             {
-                var convertedInputValue = 0;
-                
-                int.TryParse(word, out convertedInputValue);
+                int.TryParse(word, out var convertedInputValue);
 
                 returnedValue += convertedInputValue;
             }
             
             return returnedValue;
         }
+
+        public static char GetCustomDelimiters(string inputValue)
+        {
+            if (inputValue.IndexOf('/') != -1)
+            {
+                
+            }
+            
+            return '0';
+        }
     }
 }
+// ToDo: Split the input string if the first character is "//"
+// ToDo: new class to calculate delimiters.  If first char == // then pass back the delimiter.  If first char != // then pass back ',' and '\n' as delimiters.
