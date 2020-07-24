@@ -35,7 +35,7 @@ namespace StringCalculatorKataUnit01Tests
         [InlineData("1,3", 4)]
         [InlineData("7,3", 10)]
         [InlineData("1,1", 2)]
-        [InlineData("10,1",11)]
+        [InlineData("9,1",10)]
         public void AddTwoNumbers(string inputString, int outputValue)
         {
             //Arrange
@@ -49,7 +49,7 @@ namespace StringCalculatorKataUnit01Tests
         [InlineData("1,2,3", 6)]
         [InlineData("2,4,6", 12)]
         [InlineData("3,3,3", 9)]
-        [InlineData("10,20,30", 60)]
+        [InlineData("5,6,9", 20)]
         public void AddMultipleNumbers(string inputString, int outputValue)
         {
             //Arrange
