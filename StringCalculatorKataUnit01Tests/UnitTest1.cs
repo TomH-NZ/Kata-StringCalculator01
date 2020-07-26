@@ -86,6 +86,32 @@ namespace StringCalculatorKataUnit01Tests
             //Assert
             Assert.Equal(outputValue, result);
         }
+
+        /*[Theory]
+        [InlineData("-1, 2, -3")]
+        [InlineData()]
+        [InlineData()]
+        [InlineData()]
+        public void ThrowExceptionOnNegativeNumbers(string inputString, int outputValue)
+        {
+            //Arrange
+            //Act
+            //Assert
+        }*/
+
+        [Theory]
+        [InlineData("1000, 2", 2)]
+        [InlineData("1001, 1002, 3", 3)]
+        [InlineData("9999, 8888, 1", 1)]
+        [InlineData("2000, 4000, 6", 6)]
+        public void RejectNumbersOver1000(string inputString, int outputValue)
+        {
+            //Arrange
+            var result = Calculator.StringCalculator(inputString);
+            //Act
+            //Assert
+            Assert.Equal(outputValue, result);
+        }
     }
 }
 // write doc on testing.
