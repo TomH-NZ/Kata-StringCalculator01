@@ -11,40 +11,41 @@ namespace StringCalculatorKata01
             var returnedValue = 0;
             string[] values = inputValueToCalculate.Split(',');
 
-            foreach (var value in values)
+            if (inputValueToCalculate.IndexOf("/") != -1 || inputValueToCalculate.IndexOf("\n") != -1)
             {
-                int.TryParse(value, out int convertedValue);
-
-                if (convertedValue > 999)
+                foreach (char c in inputValueToCalculate)
                 {
-                    returnedValue += 0;
-                }
-                else
-                {
-                    foreach (char c in convertedValue.ToString())
-                    {
-                        int.TryParse(c.ToString(), out var convertedInputValue);
+                    int.TryParse(c.ToString(), out var convertedInputValue);
 
-                        returnedValue += convertedInputValue;
-                    } 
+                    returnedValue += convertedInputValue;
                 }
-                
             }
+            else
+            {
+                foreach (var value in values)
+                {
+                    int.TryParse(value, out int convertedValue);
+
+                    if (convertedValue > 999)
+                    {
+                        returnedValue += 0;
+                    }
+                    else
+                    {
+                        foreach (char c in convertedValue.ToString())
+                        {
+                            int.TryParse(c.ToString(), out var convertedInputValue);
+
+                            returnedValue += convertedInputValue;
+                        } 
+                    }
+                
+                }
+            }
+            
             
             return returnedValue;
         }
-
-        /*public static int convertStringToInt(string inputValues)
-        {
-            foreach (var character in inputValues)
-            {
-                int.TryParse(character.ToString(), out var convertedInput);
-                return convertedInput;
-            }
-
-            return 0;
-        }*/
-        
     }
 }
 //feed string into TryParse, the process will remove the non-int and should return the correct values.   Also look at running through the split.string process on the delimiter,
