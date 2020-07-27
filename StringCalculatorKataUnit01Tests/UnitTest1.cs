@@ -88,15 +88,17 @@ namespace StringCalculatorKataUnit01Tests
         }
 
         /*[Theory]
-        [InlineData("-1, 2, -3")]
-        [InlineData()]
-        [InlineData()]
-        [InlineData()]
-        public void ThrowExceptionOnNegativeNumbers(string inputString, int outputValue)
+        [InlineData("-1, 2, -3", "Negative numbers not allowed")]
+        [InlineData("-2, 2", "Negative numbers not allowed")]
+        [InlineData("-9, 1, -2", "Negative numbers not allowed")]
+        [InlineData("1, 2, -3", "Negative numbers not allowed")]
+        public void ThrowExceptionOnNegativeNumbers(string inputString, string outputValue)
         {
             //Arrange
+            var result = Calculator.StringCalculator(inputString);
             //Act
             //Assert
+            Assert.Equal(outputValue, result);
         }*/
 
         [Theory]
