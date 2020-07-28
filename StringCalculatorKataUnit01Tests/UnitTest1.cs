@@ -20,7 +20,7 @@ namespace StringCalculatorKataUnit01Tests
             //Assert
             Assert.Equal(outputValue, result);
         }
-        
+
         [Fact]
         public void AddTwoNumbersFact()
         {
@@ -35,7 +35,7 @@ namespace StringCalculatorKataUnit01Tests
         [InlineData("1,3", 4)]
         [InlineData("7,3", 10)]
         [InlineData("1,1", 2)]
-        [InlineData("9,1",10)]
+        [InlineData("9,1", 10)]
         public void AddTwoNumbers(string inputString, int outputValue)
         {
             //Arrange
@@ -44,7 +44,7 @@ namespace StringCalculatorKataUnit01Tests
             //Assert
             Assert.Equal(outputValue, result);
         }
-        
+
         [Theory]
         [InlineData("1,2,3", 6)]
         [InlineData("2,4,6", 12)]
@@ -107,6 +107,34 @@ namespace StringCalculatorKataUnit01Tests
         [InlineData("9999, 8888, 1", 1)]
         [InlineData("2000, 4000, 6", 6)]
         public void RejectNumbersOver1000(string inputString, int outputValue)
+        {
+            //Arrange
+            var result = Calculator.StringCalculator(inputString);
+            //Act
+            //Assert
+            Assert.Equal(outputValue, result);
+        }
+
+        [Theory]
+        [InlineData("//[***]\n1***2***3", 6)]
+        [InlineData("//[---]\n1---2---3", 6)]
+        [InlineData("//[*]\n1*2*3", 6)]
+        [InlineData("//[@@@@]\n1@@@@2@@@@3", 6)]
+        public void UseDelimitersOfAnyLength(string inputString, int outputValue)
+        {
+            //Arrange
+            var result = Calculator.StringCalculator(inputString);
+            //Act
+            //Assert
+            Assert.Equal(outputValue, result);
+        }
+        
+        [Theory]
+        [InlineData("//[**][@@]\n1**2@@3", 6)]
+        [InlineData("//[*][@]\n1*2@3", 6)]
+        [InlineData("//[-][_]\n1-2_3", 6)]
+        [InlineData("//[..][@@]\n1..2@@3", 6)]
+        public void UseMultipleDelimiters(string inputString, int outputValue)
         {
             //Arrange
             var result = Calculator.StringCalculator(inputString);
