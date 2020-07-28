@@ -142,6 +142,20 @@ namespace StringCalculatorKataUnit01Tests
             //Assert
             Assert.Equal(outputValue, result);
         }
+        
+        [Theory]
+        [InlineData("//[***][%][&]\n1***2%3&4", 10)]
+        [InlineData("//[!!][@@@][####]\n2!!4@@@6####8", 20)]
+        [InlineData("//[*][^^^][$$]\n, 1$$2^^^3*4", 10)]
+        [InlineData("//[@@@@][####][!!!!]\n2!!!!4@@@@6####8", 20)]
+        public void UseMultipleDelimitersLongerThanOneCharacter(string inputString, int outputValue)
+        {
+            //Arrange
+            var result = Calculator.StringCalculator(inputString);
+            //Act
+            //Assert
+            Assert.Equal(outputValue, result);
+        }
     }
 }
 // write doc on testing.
