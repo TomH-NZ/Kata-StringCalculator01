@@ -156,6 +156,18 @@ namespace StringCalculatorKataUnit01Tests
             //Assert
             Assert.Equal(outputValue, result);
         }
+        
+        [Theory]
+        [InlineData("//[*1*][%]\n1*1*2%3", 6)]
+        [InlineData("//[*9*][%]\n1*9*2%3*9*4", 10)]
+        public void UseDelimitersWithInternalNumbers(string inputString, int outputValue)
+        {
+            //Arrange
+            var result = Calculator.StringCalculator(inputString);
+            //Act
+            //Assert
+            Assert.Equal(outputValue, result);
+        }
     }
 }
 // write doc on testing.

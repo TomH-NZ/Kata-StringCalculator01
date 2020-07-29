@@ -13,12 +13,23 @@ namespace StringCalculatorKata01
 
             if (inputValueToCalculate.IndexOf("/") != -1 || inputValueToCalculate.IndexOf("\n") != -1)
             {
-                foreach (char c in inputValueToCalculate)
+                string numberPositionInDelimiter = inputValueToCalculate.Substring(4, 1);
+                int.TryParse(numberPositionInDelimiter, out var delimiterNumber);
+                
+                if (delimiterNumber > 0)
                 {
-                    int.TryParse(c.ToString(), out var convertedInputValue);
-
-                    returnedValue += convertedInputValue;
+                    return 0;
                 }
+                else
+                {
+                    foreach (char c in inputValueToCalculate)
+                    {
+                        int.TryParse(c.ToString(), out var convertedInputValue);
+
+                        returnedValue += convertedInputValue;
+                    }
+                }
+                
             }
             else
             {
