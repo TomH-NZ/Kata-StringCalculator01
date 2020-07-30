@@ -11,14 +11,12 @@ namespace StringCalculatorKata01
             var returnedValue = 0;
             string[] values = inputValueToCalculate.Split(',');
 
-            if (inputValueToCalculate.IndexOf("/") != -1 || inputValueToCalculate.IndexOf("\n") != -1)
+            if (inputValueToCalculate.IndexOf("/") != -1 || inputValueToCalculate.IndexOf("\n") != -1) // use bool?
             {
-                string numberPositionInDelimiter = inputValueToCalculate.Substring(4, 1);
-                string squareBracketDelimiter = inputValueToCalculate.Substring(2, 1);
-                int.TryParse(numberPositionInDelimiter, out var delimiterNumber);
-                int.TryParse(squareBracketDelimiter, out var squareBracketPosition);
-                
-                if (delimiterNumber > 0 && inputValueToCalculate.IndexOf("[") != -1)
+                string numberPositionInDelimiter = inputValueToCalculate.Substring(4, 1); // change number to be a const at start of program, startingDelimiterIndex 
+                int.TryParse(numberPositionInDelimiter, out var delimiterNumber); // return as bool?
+
+                if (delimiterNumber > 0 && inputValueToCalculate.IndexOf("[") != -1) // create function hasSquareBracket and hasNumberInDelimiter, return as bool?
                 {
                     /*string numberDelimiterSubstring = inputValueToCalculate.Substring(
                         inputValueToCalculate.IndexOf("\n"),
@@ -30,7 +28,7 @@ namespace StringCalculatorKata01
 
                         returnedValue += convertedInputValue;
                     }*/
-                    return 0;
+                    return 1;
                 }
                 else
                 {
@@ -71,8 +69,3 @@ namespace StringCalculatorKata01
         }
     }
 }
-//feed string into TryParse, the process will remove the non-int and should return the correct values.   Also look at running through the split.string process on the delimiter,
-//taking delimiter from 3rd character to \n 
-
-//ToDo: if first char = '-', create function for neg numbers
-//ToDo: if first char is not '/' or '-' then create function for int 1000+
