@@ -11,7 +11,7 @@ namespace StringCalculatorKata01
             var returnedValue = 0;
             string[] values = inputValueToCalculate.Split(',');
 
-            if (inputValueToCalculate.IndexOf("/") != -1 || inputValueToCalculate.IndexOf("\n") != -1) // use bool?
+            if (inputValueToCalculate.IndexOf("/") != -1 || inputValueToCalculate.IndexOf("\n") != -1) // use bool, create functions that return as bool, if match both then proceed
             {
                 string numberPositionInDelimiter = inputValueToCalculate.Substring(4, 1); // change number to be a const at start of program, startingDelimiterIndex 
                 int.TryParse(numberPositionInDelimiter, out var delimiterNumber); // return as bool?
@@ -63,8 +63,6 @@ namespace StringCalculatorKata01
                 
                 }
             }
-            
-            
             return returnedValue;
         }
     }
