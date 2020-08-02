@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Globalization;
+using System.Runtime.Serialization.Formatters;
 
 namespace StringCalculatorKata01
 {
@@ -9,14 +10,12 @@ namespace StringCalculatorKata01
         public static int StringCalculator(string inputValueToCalculate)
         {
             var returnedValue = 0;
+            
             string[] values = inputValueToCalculate.Split(',');
 
-            if (inputValueToCalculate.IndexOf("/") != -1 || inputValueToCalculate.IndexOf("\n") != -1) // use bool, create functions that return as bool, if match both then proceed
+            if (HasForwardSlash(inputValueToCalculate) == true || HasSlashN(inputValueToCalculate) == true) 
             {
-                string numberPositionInDelimiter = inputValueToCalculate.Substring(4, 1); // change number to be a const at start of program, startingDelimiterIndex 
-                int.TryParse(numberPositionInDelimiter, out var delimiterNumber); // return as bool?
-
-                if (delimiterNumber > 0 && inputValueToCalculate.IndexOf("[") != -1) // create function hasSquareBracket and hasNumberInDelimiter, return as bool?
+                if (HasDelimiterNumber(inputValueToCalculate) == true && HasSquareBracket(inputValueToCalculate) == true) 
                 {
                     string numberDelimiterSubstring = inputValueToCalculate.Substring(
                         inputValueToCalculate.IndexOf("\n"), inputValueToCalculate.Length - inputValueToCalculate.IndexOf("\n"));
@@ -29,6 +28,7 @@ namespace StringCalculatorKata01
 
                         returnedValue += convertedInputValue;
                     }
+                    
                 }
                 else
                 {
@@ -65,5 +65,49 @@ namespace StringCalculatorKata01
             }
             return returnedValue;
         }
+        
+        public static bool HasDelimiterNumber(string inputValue)
+        {
+            var numberDelimiterStartIndex = 4;
+
+            int.TryParse(inputValue.Substring(numberDelimiterStartIndex, 1), out var delimiterNumber);
+
+            if (delimiterNumber > 0)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        public static bool HasSquareBracket(string inputValue)
+        {
+            if (inputValue.IndexOf("[") > -1)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public static bool HasForwardSlash(string inputValue)
+        {
+            if (inputValue.IndexOf("/") > -1)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        public static bool HasSlashN(string inputValue)
+        {
+            if (inputValue.IndexOf("\n") > -1)
+            {
+                return true;
+            }
+
+            return false;
+        }
+        
     }
 }
