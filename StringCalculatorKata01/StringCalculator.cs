@@ -18,17 +18,17 @@ namespace StringCalculatorKata01
 
                 if (delimiterNumber > 0 && inputValueToCalculate.IndexOf("[") != -1) // create function hasSquareBracket and hasNumberInDelimiter, return as bool?
                 {
-                    /*string numberDelimiterSubstring = inputValueToCalculate.Substring(
-                        inputValueToCalculate.IndexOf("\n"),
-                        inputValueToCalculate.Length - inputValueToCalculate.IndexOf("\n"));
+                    string numberDelimiterSubstring = inputValueToCalculate.Substring(
+                        inputValueToCalculate.IndexOf("\n"), inputValueToCalculate.Length - inputValueToCalculate.IndexOf("\n"));
 
-                    foreach (var c in numberDelimiterSubstring)
+                    var trimmedSubString = numberDelimiterSubstring.Remove(2, 3);
+                    
+                    foreach (char c in trimmedSubString)
                     {
                         int.TryParse(c.ToString(), out var convertedInputValue);
 
                         returnedValue += convertedInputValue;
-                    }*/
-                    return 1;
+                    }
                 }
                 else
                 {

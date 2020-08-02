@@ -159,7 +159,7 @@ namespace StringCalculatorKataUnit01Tests
         
         [Theory]
         [InlineData("//[*1*][%]\n1*1*2%3", 6)]
-        [InlineData("//[*9*][%]\n1*9*2%3*9*4", 10)]
+        [InlineData("//[*9*][%]\n1*9*2%3%4", 10)]
         public void UseDelimitersWithInternalNumbers(string inputString, int outputValue)
         {
             //Arrange
